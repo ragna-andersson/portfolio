@@ -201,11 +201,6 @@ p {
 .left-align {
   text-align: left;
 }
-@media (max-width: 850px) {
-  h2 {
-    font-size: 20px;
-  }
-}
 
 /*------------------------------------*\
   #IMAGES
