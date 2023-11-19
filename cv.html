@@ -4,123 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Ragnas Portfolio CV</title>
 </head>
 
-<body>
-    <img src="/img/header cv.jpg" alt="header">
-    <nav>
-        <p>Meny</p>
-        <a href="index.html">Startsida</a>
-    </nav>
-    <hr>
-    <h2>
-        CV
-    </h2>
-    <h3>
-        Hello! Jag sökerpraktikplats våren 2024!
-    </h3>
-    <img src="img/ai_jag.jpg" alt="Ai rendered photo of Ragna">
-    <h3>
-        Period: 22 januari - 31 maj 2024<br>
-        Motto: allt går att lösa.
-    </h3>
-    <br>
-    <section>
+<!-- HEADER -->
 
-        <pre>
-            40-årig högskoleingenjör inom den gröna branschen, som sadlar om till UX Designer. 
-            Arbetsam och engagerad oavsett arbetsplats. 
-            Uppvuxen på ekologisk bondgård med nötköttsuppfödning. Har jobbat som inköpare, väktare och avbytare på mjölkgård (på Island). 
-            Driver stilkonto på fritiden. Bland mycket annat. 
-            Är inte rädd för att ta i, varken muntligt eller kroppsligt. 
-            Det är inte ens yrke som definierar vem man är - det är hur man hanterar arbetsuppgifter.
-        </pre>
-        <br>
-        <article>
-            <h5>
-                2022-2024
-            </h5>
-            <h3>
-                It Högskolan Göteborg <br>
-                UX Design
+<header class="header">
+    <div class="header_med_logo">
+        <img class="logo" src="img/ragnalogo.png" alt="Ragna logo" /> <br>
+    </div>
+    <div class="image_and_menu_container">
+        <div class="header_image_text_small">
+            <img class="header_image_small" src="/img/header 2.jpg" alt="header" />
+            <h1 class="header_text_centered">
+                CV
+            </h1>
+        </div>
+        <nav class="menu_box">
+            <!-- <p>Meny</p> -->
+            <div class="menu">
+                <a href="index.html">Hem</a>
+                <a href="utbildning.html">Utbildning</a>
+                <a href="https://www.linkedin.com/in/ragna-andersson/" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<body class="body_cv">
+    <div class="padding-1">
+        <h1 class="hello_cv">
+            HELLO!
+        </h1>
+
+        <div class="grid-container-2-col">
+            <img class="col1 img-scale" src="img/ai_jag.jpg" alt="Ai rendered photo of Ragna">
+            <div class="col2 internship_info">
+                <h3 class="internship_header">
+                    Jag söker praktikplats våren 2024!
+                </h3>
+
+            <p class="">
+                Period: 22 januari - 31 maj 2024<br>
+                Motto: allt går att lösa.
             </h3>
-            <p>
-                Human Computer Interaction med all vad det innebär; <br>
-                UX, IA, IxD, UI. Agilt arbete. Portfolio. Webbdesign, appdesign & fysisk usability. Programmering för
-                UXare. Praktik.
-            </p>
-            <br>
-        </article>
-        <article>
-            <h5>
-                2021-2022
-            </h5>
-            <h3>
-                Länsstyrelsen <br>
-                Handläggare jordbruksstöd
-            </h3>
-            <p>
-                Hantering av SAM-ansökningar, särskilt miljöstöd för Bete och slåtterängar. <br>
-                Excel, Kartprogram, Jordbruksverkets olika handläggningssystem samt telefonväxel med support. <br>
-                Även hantering av Polis och Stämningsman.
-            </p>
-            <br>
-        </article>
-        <article>
-            <h5>
-                2018-2020
-            </h5>
-            <h3>
-                Stångby Plantskola <br>
-                Inköpare
-            </h3>
-            <p>
-                En av de största träd- och buskplantskolorna i Sverige. <br>
-                Inköpare av vedartat material från Tyskland, Holland och Danmark samt kollegor i Sverige. <br>
-                Inköp direkt från order. Affärssystem, leverantörskontrakt, fraktbokningar. Offerter. <br>
-                Ansvar för reklamationer mot producent samt IT. <br>
-                Även fotografering och Instagramkonto.
-            </p>
-            <br>
-        </article>
-        <article>
-            <h5>
-                2016-2018
-            </h5>
-            <h3>
-                Trädgårdsakademin<br>
-                Arbetsledning grönyteförvaltning
-            </h3>
-            <p>
-                Yrkeshögskola. <br>
-                Offentlig upphandling, arbetsledning, arbetsmiljökunskap,<br>
-                praktik/LIA, kalkylering, entreprenadjuridik osv.
-            </p>
-            <br>
-        </article>
-        <article>
-            <h5>
-                2009-212
-            </h5>
-            <h3>
-                Sveriges Lantbruksuniversitet<br>
-                Trädgårdsingenjörsprogrammet
-            </h3>
-            <p>
-                Treårig högskoleutbildning inom hortikultur/biologi. <br>
-                Valbara kurser tredje året. Bland annat trädvård, kyrkogårdsförvaltning och ståndortskännedom.
-                <br>
-                Kandidatarbete 15 HP.<br>
-                Examen i biologi.
-            </p>
-        </article>
-    </section>
+            </div>
+        </div>
+
+        <section class="flex flex-column">
+
+            <div class="grid-container-2-col">
+                <p class="col2">
+                    40-årig högskoleingenjör inom den gröna branschen, som sadlar om till UX Designer. 
+                    Arbetsam och engagerad oavsett arbetsplats. 
+                    Uppvuxen på ekologisk bondgård med nötköttsuppfödning. Har jobbat som inköpare, väktare och avbytare på mjölkgård (på Island). 
+                    Driver stilkonto på fritiden. Bland mycket annat. 
+                    Är inte rädd för att ta i, varken muntligt eller kroppsligt. 
+                    Det är inte ens yrke som definierar vem man är - det är hur man hanterar arbetsuppgifter.
+                </p>
+            </div>
+
+            <div class="grid-container-2-col">
+                <article>
+                    <h5 class="right-align">
+                        2022-2024
+                    </h5>
+                    <h3 class="right-align">
+                        It Högskolan Göteborg <br>
+                        UX Design
+                    </h3>
+                    <p class="right-align">
+                        Human Computer Interaction med all vad det innebär; <br>
+                        UX, IA, IxD, UI. Agilt arbete. Portfolio. Webbdesign, appdesign & fysisk usability. Programmering för
+                        UXare. Praktik.
+                    </p>
+                    <br>
+                </article>
+            </div>
+            <div class="grid-container-2-col">
+                <article class="col2">
+                    <h5>
+                        2021-2022
+                    </h5>
+                    <h3>
+                        Länsstyrelsen <br>
+                        Handläggare jordbruksstöd
+                    </h3>
+                    <p>
+                        Hantering av SAM-ansökningar, särskilt miljöstöd för Bete och slåtterängar. <br>
+                        Excel, Kartprogram, Jordbruksverkets olika handläggningssystem samt telefonväxel med support. <br>
+                        Även hantering av Polis och Stämningsman.
+                    </p>
+                    <br>
+                </article>
+            </div>
+            <div class="grid-container-2-col">
+                <article>
+                    <h5 class="right-align">
+                        2018-2020
+                    </h5>
+                    <h3 class="right-align">
+                        Stångby Plantskola <br>
+                        Inköpare
+                    </h3>
+                    <p class="right-align">
+                        En av de största träd- och buskplantskolorna i Sverige. <br>
+                        Inköpare av vedartat material från Tyskland, Holland och Danmark samt kollegor i Sverige. <br>
+                        Inköp direkt från order. Affärssystem, leverantörskontrakt, fraktbokningar. Offerter. <br>
+                        Ansvar för reklamationer mot producent samt IT. <br>
+                        Även fotografering och Instagramkonto.
+                    </p>
+                    <br>
+                </article>
+            </div>
+            <div class="grid-container-2-col">
+                <article class="col2">
+                    <h5>
+                        2016-2018
+                    </h5>
+                    <h3>
+                        Trädgårdsakademin<br>
+                        Arbetsledning grönyteförvaltning
+                    </h3>
+                    <p>
+                        Yrkeshögskola. <br>
+                        Offentlig upphandling, arbetsledning, arbetsmiljökunskap,<br>
+                        praktik/LIA, kalkylering, entreprenadjuridik osv.
+                    </p>
+                    <br>
+                </article>
+            </div>
+            <div class="grid-container-2-col">
+                <article>
+                    <h5 class="right-align">
+                        2009-212
+                    </h5>
+                    <h3 class="right-align">
+                        Sveriges Lantbruksuniversitet<br>
+                        Trädgårdsingenjörsprogrammet
+                    </h3>
+                    <p class="right-align">
+                        Treårig högskoleutbildning inom hortikultur/biologi. <br>
+                        Valbara kurser tredje året. Bland annat trädvård, kyrkogårdsförvaltning och ståndortskännedom.
+                        <br>
+                        Kandidatarbete 15 HP.<br>
+                        Examen i biologi.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </div>
 </body>
-<hr>
-<footer>
-    © Photos Ragna. Peas on earth! <br>
-    <img src="img/ragnalogo.jpg" alt="Ragna logo" />
+<footer class="footer padding-1">
+    <p>© Photos Ragna. Peas on earth!</p>
+    <img class="logo" src="img/ragnalogo.png" alt="Ragna logo" />
 </footer>
 
 </html>
