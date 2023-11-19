@@ -1,0 +1,168 @@
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ * Buttons..............Button elements.
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
+
+/*------------------------------------*\
+  #SETTINGS
+\*------------------------------------*/
+
+$background_color: F2F2F2;
+
+
+
+/* HELA SIDAN */
+
+body {
+  background-color: $background_color;
+}
+
+section {
+  margin-bottom: 20px;
+  /* Justera detta värde enligt önskat avstånd */
+  padding: 10px;
+  /* Om du vill lägga till fyllnad inuti varje avsnitt */
+}
+
+/* RUBRIKER */
+
+$rubrikfärg: white;
+
+h1 {
+  color: $rubrikfärg;
+  text-align: left;
+  font-family: croissant one, serif;
+
+  // Om skärmbredden är mindre än 650 pixlar
+  @media (min-width: 650px){
+    font-size: 30px;
+  }
+
+  // Om skärmbredden är åstminstone 650 pixlar
+  @media (min-width: 650px){
+    // Sätt en mindre textstorlek så att texten får plats.
+    font-size: 81px;
+  }
+}
+
+h2 {
+  color: black;
+  text-align: left;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 36px;
+}
+
+/* HEADER */
+.header{
+  display: flex;
+  flex-direction: column;
+}
+
+.image_and_menu_container{
+  display: flex;
+  flex-direction: row;
+}
+
+.header_med_logo {
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+  height: 3.75rem;
+}
+
+/* Start-info för bild med text */
+.header_bild_med_rubrik {
+  position: relative;
+  text-align: left;
+  /* Ändra textjusteringen till vänster */
+}
+
+/* Storlek på bild med text */
+.headerbild {
+  width: 100%;
+  /* Anpassa bilden till bredden av behållaren */
+}
+
+/* Stil för rubrik på bild */
+.rubriktext {
+  position: absolute;
+  text-align: right;
+  /* Placera rubriken på bilden */
+  top: 50%;
+  /* Justera vertikalt till mitten */
+  left: 10px;
+  /* Placera till vänster med en lämplig marginal */
+  transform: translateY(-50%);
+  /* Centrera vertikalt */
+  /*background-color: rgba(0, 0, 0, 0);*/
+  /* Bakgrundsfärg med genomskinlighet */
+  color: #fff;
+  /* Textfärg */
+  padding: 10px;
+  /* Lägg till lite utrymme runt texten */
+}
+
+/* NAV */
+
+.menu_box{
+  align-items: start;
+  justify-content: end;
+  column-gap: 1rem;
+  background-color: $background_color;
+
+}
+
+.menu{
+  display: flex;
+  column-gap: 0.5rem;
+  width: 1.3rem;
+  rotate: 90deg;
+}
+
+nav a{
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+}
+
+
+/* BODY */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+/* FOOTER */
+
+.footer_text {
+  color: black;
+  text-align: left;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+}
