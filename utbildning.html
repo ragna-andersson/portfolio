@@ -4,125 +4,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Ragna Portfolio Utbildning</title>
 </head>
 
-<body>
-    <img src="img/header utbildning.jpg" alt="header">
-    <nav>
-        <p>Meny</p>
-        <a href="index.html">Startsida</a>
-    </nav>
-    <hr>
-    <h2>
-        Utbildning <br>
-        IT Högskolan kurser
-    </h2>
+<!-- HEADER -->
 
-    <section>
-        <article>
-            <h5>
-                2022
-            </h5>
-            <h3>
-                Användarcentrerad design
-            </h3>
-            <p>
-                UX research<br>
-                UX writing<br>
-                Enkäter<br>
-                Användbarhetstester<br>
-                Intervjutekniker<br>
-                Heuristik<br>
-                Kundresor<br>
-                Usability testing
-            </p>
-        </article>
-        <article>
-            <h5>
-                2023
-            </h5>
-            <h3>
-                Agila metoder
-            </h3>
-            <p>
-                Scrum guide<br>
-                Design thinking<br>
-                LEAN UX
-            </p>
-        </article>
-        <article>
-            <h3>
-                Gränssnittsdesign
-            </h3>
-            <p>
-                IA<br>
-                Card sorting<br>
-                Site map<br>
-                WireframesStyles<br>
-                Typografi <br>
-                Färglära<br>
-                Gestaltlära<br>
-                Laws of UX<br>
-                Dark patterns<br>
-                Nudging
-            </p>
-        </article>
-        <article>
-            <h3>
-                Webdesign / Appdesign
-            </h3>
-            <p>
-                Fysisk usability
-            </p>
-        </article>
-        <article>
-            <h3>
-                LIA
-            </h3>
-            <p>
-                Lärande I Arbete. Praktik
-            </p>
-        </article>
-        <article>
-            <h3>
-                Programmering för UX-are
-            </h3>
-            <p>
-                HTML5
-            <p style="background-color:powderblue;">CSS <b>Här är jag just nu!</p></b><br>
-            Java<br>
-            ...
-            </p>
-        </article>
-        <article>
-            <h5>
-                2024
-            </h5>
-            <h3>
-                Branding Strategi och Presentation
-            </h3>
-        </article>
-        <article>
-            <h3>
-                LIA
-            </h3>
-            <p>
-                Lärande I Arbete. Praktik
-            </p>
-        </article>
-        <article>
-            <h3>
-                Examensarbete
-            </h3>
-        </article>
-        <br>
-    </section>
+<header class="header">
+    <div class="header_med_logo">
+        <img class="logo" src="img/ragnalogo.png" alt="Ragna logo" /> <br>
+    </div>
+    <div class="image_and_menu_container">
+        <div class="header_image_text_small">
+            <img class="header_image_small" src="/img/header utbildning.jpg" alt="header" />
+            <h1 class="header_text_centered">
+                Kurser
+            </h1>
+        </div>
+        <nav class="menu_box">
+            <!-- <p>Meny</p> -->
+            <div class="menu">
+                <a href="index.html">Hem</a>
+                <a href="cv.html">CV</a>
+                <a href="https://www.linkedin.com/in/ragna-andersson/" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<body class="body_education">
+    <div class="padding-1">
+        <section class="grid-container-2-col">
+            <h2 class="col1">
+                Utbildning <br>
+                IT Högskolan kurser
+            </h2>
+            <div class="flex flex-column col1-2">
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                        <h5>
+                            2022
+                        </h5>
+                        <h3>
+                            Användarcentrerad design
+                        </h3>
+                        <p>
+                            UX research<br>
+                            UX writing<br>
+                            Enkäter<br>
+                            Användbarhetstester<br>
+                            Intervjutekniker<br>
+                            Heuristik<br>
+                            Kundresor<br>
+                            Usability testing
+                        </p>
+                    </div>
+                </article>
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                    <h5>
+                        2023
+                    </h5>
+                    <h3>
+                        Agila metoder
+                    </h3>
+                    <p>
+                        Scrum guide<br>
+                        Design thinking<br>
+                        LEAN UX
+                    </p>
+                    </div>
+                </article>
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                        <h3>
+                            Gränssnittsdesign
+                        </h3>
+                        <p>
+                            IA<br>
+                            Card sorting<br>
+                            Site map<br>
+                            WireframesStyles<br>
+                            Typografi <br>
+                            Färglära<br>
+                            Gestaltlära<br>
+                            Laws of UX<br>
+                            Dark patterns<br>
+                            Nudging
+                        </p>
+                    </div>
+                </article>
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                        <h3>
+                            Webdesign / Appdesign
+                        </h3>
+                        <p>
+                            Fysisk usability
+                        </p>
+                    </div>
+                </article>
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                        <h3>
+                            LIA
+                        </h3>
+                        <p>
+                            Lärande I Arbete. Praktik
+                        </p>
+                    </div>    
+                </article>
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                        <h3>
+                            Programmering för UX-are
+                        </h3>
+                        <p>
+                            HTML5<br>
+                            CSS<br>
+                            Java
+                        </p>
+                    </div>
+                    
+                </article>
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                        <h5>
+                            2024
+                        </h5>
+                        <h3>
+                            Branding Strategi och Presentation
+                        </h3>
+                    </div>
+                </article>
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                        <h3>
+                            LIA
+                        </h3>
+                        <p>
+                            Lärande I Arbete. Praktik
+                        </p>
+                    </div>
+                </article>
+                <article class="grid-container-2-col">
+                    <div class="flex flex-column">
+                        <h3>
+                            Examensarbete
+                        </h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
 </body>
-<hr>
-<footer>
-    © Photos Ragna. Peas on earth! <br>
-    <img src="img/ragnalogo.jpg" alt="Ragna logo" />
+<footer class="footer padding-1">
+    <p style="text-align: left;">© Photos Ragna. Peas on earth!</p>
+    <img class="logo" src="img/ragnalogo.png" alt="Ragna logo" />
 </footer>
 
 </html>

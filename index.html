@@ -15,17 +15,16 @@
 </head>
 
 
-
 <!-- HEADER -->
 
 <header class="header">
     <div class="header_med_logo">
-        <img src="img/ragnalogo.jpg" alt="Ragna logo" /> <br>
+        <img class="logo" src="img/ragnalogo.png" alt="Ragna logo" /> <br>
     </div>
     <div class="image_and_menu_container">
         <div class="header_bild_med_rubrik">
-            <img class="headerbild" src="/img/header 2.jpg" alt="header" />
-            <h1 class="rubriktext">
+            <img class="headerbild_index" src="/img/header 2.jpg" alt="header" />
+            <h1 class="rubriktext_index">
                 Hej!<br>
                 Ragna Andersson<br>
                 UX Design student
@@ -45,54 +44,73 @@
 <!-- BODY -->
 
 <body>
+    <div class="padding-1">
+        <!-- Vill ha en meny med dessa tre länkar till höger sen, vertikalt. Får se om vi kommer så långt att jag löser det. -->
+        <div class="grid-container-2-col">
+            <section class="col2 row1">
+                <h2>
+                    Jag studerar UX Design på IT Högskolan<br>
+                    i Göteborg.<br>
+                    Välkommen till min portfolio.
+                </h2>
+            </section>
 
-    <!-- NAV-BAR -->
+            <!-- PROJECT -->
+            <section class="col1-2 row2 grid-container-2-col">
+                <h1 class="col2">
+                    <i>Projekt</i>
+                </h1>
+                <div class="col1-2 row2 grid-container-2-col">
+                    <img class="col1 project_img" src="/img/projekt/prj1_hearts.png" alt="screenshot of västrafik app" />
 
-    <!-- Vill ha en meny med dessa tre länkar till höger sen, vertikalt. Får se om vi kommer så långt att jag löser det. -->
+                    <div class="col2">
+                        <h3>
+                            Reseplaneraren - Lättanvänd?
+                        </h3>
 
-    <section>
-        <h2>
-            Jag studerar UX Design på IT Högskolan<br>
-            i Göteborg.<br>
-            Välkommen till min portfolio.
-        </h2>
-    </section>
+                        <p>
+                            Kan UX-research användas för att förbättra användarupplevelsen av Västtrafiks Reseplanerare? <br>
+                            Vilken viktig information framkommer från undersökningen för att optimera tjänsten?
+                        </p>
+                        <!-- Vet att man inte ska lägga saker som inte är aktiva synligt. Knappen går inte nånstans just nu. Men ville visa för dig att jag vet hur man gör en html knapp, inför att jag ska sminka den med css och koppla til projekt -->
+                        <button class="project_button">Läs mer 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="col1-2 row3 grid-container-2-col">
+                    <img class="col1 project_img" src="/img/projekt/togo.png" alt="screenshot of västrafik app" />
 
-    <!-- PROJECT -->
+                    <div class="col2">
+                        <h3>
+                            Reseplaneraren - Hjärtknappar
+                        </h3>
 
-    <section>
-        <h1>
-            <i>Projekt</i>
-        </h1>
-    </section>
-
-    <section>
-        <img src="/img/projekt/prj1_hearts.png" alt="screenshot of västrafik app" />
-
-        <h3>
-            Reseplaneraren - Lättanvänd?
-        </h3>
-
-        <p>
-            Kan UX-research användas för att förbättra användarupplevelsen av Västtrafiks Reseplanerare? <br>
-            Vilken viktig information framkommer från undersökningen för att optimera tjänsten?
-        </p>
-        <!-- Vet att man inte ska lägga saker som inte är aktiva synligt. Knappen går inte nånstans just nu. Men ville visa för dig att jag vet hur man gör en html knapp, inför att jag ska sminka den med css och koppla til projekt -->
-        <button>Läs mer</button>
-    </section>
-
-    <br>
-
+                        <p>
+                            Genom att ta fram prototyper på tre förbättringsmöjligheter som framkommit genom tidigare användbarhetstester, förbättras tjänsten och gör den ännu mer användarvänlig. 
+                        </p>
+                        <!-- Vet att man inte ska lägga saker som inte är aktiva synligt. Knappen går inte nånstans just nu. Men ville visa för dig att jag vet hur man gör en html knapp, inför att jag ska sminka den med css och koppla til projekt -->
+                        <button class="project_button">Läs mer 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <br>
+        </div>
+    </div>
 </body>
 
 <!-- FOOTER -->
 
-<footer>
+<footer class="footer padding-1">
 
-    <hr>
-
-    <img src="img/ragnalogo.jpg" alt="Ragna logo" /> <br>
-    <p class="footer_text">
+    <img  class="logo" src="img/ragnalogo.png" alt="Ragna logo" /> <br>
+    <p>
         © Photos Ragna. Peas on earth!
     </p>
 

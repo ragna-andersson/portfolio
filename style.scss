@@ -30,14 +30,80 @@
   #SETTINGS
 \*------------------------------------*/
 
-$background_color: F2F2F2;
+$light_background_color: #F2F2F2;
+$purple_background_color: #968FA6;
+$green_background_color: #848C73;
+$header_color: black;
+$paragraph_color: black;
+
+$device_medium: 450px;
+$device_large: 850px;
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+.grid-container-2-col {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  row-gap: 3rem;
+}
+
+.col1
+{
+  grid-column-start: 1;
+}
+
+.col2
+{
+  grid-column-start: 2;
+}
+
+.row1
+{
+  grid-row-start: 1;
+}
+
+.col1-2
+{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.row2
+{
+  grid-row-start: 2;
+}
+
+.row3
+{
+  grid-row-start: 3;
+}
+
+.flex
+{
+  display: flex;
+}
+
+.flex-column
+{
+  flex-direction: column;
+}
+
+.padding-1
+{
+  padding: 1rem;
+}
 
 
-
-/* HELA SIDAN */
+/*------------------------------------*\
+  #BODY
+\*------------------------------------*/
 
 body {
-  background-color: $background_color;
+  background-color: $light_background_color;
+  padding: 0;
+  margin: 0;
 }
 
 section {
@@ -47,39 +113,112 @@ section {
   /* Om du vill lägga till fyllnad inuti varje avsnitt */
 }
 
-/* RUBRIKER */
+/*------------------------------------*\
+  #TEXT BASE
+\*------------------------------------*/
 
-$rubrikfärg: white;
+// Basklass som används för all text med typsnittet Montserrat
+.text-montserrat{
+  text-align: left;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.text-croissant{
+  text-align: left;
+  font-family: croissant one, serif;
+  font-weight: normal;
+}
+
+/*------------------------------------*\
+  #HEADERS
+\*------------------------------------*/
 
 h1 {
-  color: $rubrikfärg;
+  color: $header_color;
   text-align: left;
   font-family: croissant one, serif;
 
   // Om skärmbredden är mindre än 650 pixlar
-  @media (min-width: 650px){
-    font-size: 30px;
-  }
-
-  // Om skärmbredden är åstminstone 650 pixlar
-  @media (min-width: 650px){
+   font-size: 30px;
+  // Om skärmbredden är åtminstone 650 pixlar
+  @media (min-width: $device_large){
     // Sätt en mindre textstorlek så att texten får plats.
     font-size: 81px;
   }
 }
 
 h2 {
-  color: black;
-  text-align: left;
-  font-family: Montserrat, Arial, sans-serif;
-  font-weight: normal;
+  @extend .text-montserrat;  // använd alla egenskaper från klassen .text-montserrat
+  color: $header_color;
+ 
   font-size: 36px;
+  @media (max-width: $device_large){
+    font-size: 20px;
+  }
 }
 
-/* HEADER */
+h3 {
+  @extend .text-montserrat; // använd alla egenskaper från klassen .text-montserrat
+  color: $header_color;
+  font-size: 12px;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+
+  @media (min-width: $device_medium){
+    font-size: 24px;
+  }
+}
+
+/*------------------------------------*\
+  #OTHER TEXT
+\*------------------------------------*/
+
+p {
+  @extend .text-montserrat; // använd alla egenskaper från klassen .text-montserrat
+
+  color: $paragraph_color;
+  font-size: 15px;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+
+  @media (min-width: $device_medium){
+    font-size: 24px;
+    word-break: normal;
+  }
+}
+
+.right-align{
+  text-align: right;
+}
+
+
+/*------------------------------------*\
+  #IMAGES
+\*------------------------------------*/
+
+.img-scale{
+  max-width: 100%;
+}
+
+.logo{
+  height: 2rem;
+}
+
+
+/*------------------------------------*\
+  #PAGE HEADER
+\*------------------------------------*/
 .header{
   display: flex;
   flex-direction: column;
+  background-color: $light_background_color;
+  margin:0
 }
 
 .image_and_menu_container{
@@ -92,6 +231,7 @@ h2 {
   align-items: center;
   padding-left: 5rem;
   height: 3.75rem;
+  background-color: $light_background_color;
 }
 
 /* Start-info för bild med text */
@@ -101,24 +241,38 @@ h2 {
   /* Ändra textjusteringen till vänster */
 }
 
+.header_image_text_small {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  height: 30vw;
+  /* Ändra textjusteringen till vänster */
+}
+
 /* Storlek på bild med text */
-.headerbild {
+.headerbild_index {
   width: 100%;
   /* Anpassa bilden till bredden av behållaren */
 }
 
+/* Storlek på bild med text */
+.header_image_small {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Anpassa bilden till bredden av behållaren */
+}
+
 /* Stil för rubrik på bild */
-.rubriktext {
+.rubriktext_index{
   position: absolute;
   text-align: right;
   /* Placera rubriken på bilden */
   top: 50%;
   /* Justera vertikalt till mitten */
   left: 10px;
-  /* Placera till vänster med en lämplig marginal */
-  transform: translateY(-50%);
   /* Centrera vertikalt */
-  /*background-color: rgba(0, 0, 0, 0);*/
+  transform: translateY(-50%);
   /* Bakgrundsfärg med genomskinlighet */
   color: #fff;
   /* Textfärg */
@@ -126,43 +280,188 @@ h2 {
   /* Lägg till lite utrymme runt texten */
 }
 
-/* NAV */
+/* Stil för rubrik på bild */
+.header_text_centered{
+  position: absolute;
+  text-align: center;
+  /* Placera rubriken på bilden */
+  top: 0%;
+  /* Justera vertikalt till mitten */
+  left: 50%;
+  /* Centrera vertikalt */
+  transform: translateX(-50%);
+  /* Bakgrundsfärg med genomskinlighet */
+  color: #fff;
+  /* Textfärg */
+  padding: 10px;
+  /* Lägg till lite utrymme runt texten */
+}
+
+
+/*------------------------------------*\
+  #NAV MENU
+\*------------------------------------*/
 
 .menu_box{
   align-items: start;
   justify-content: end;
   column-gap: 1rem;
-  background-color: $background_color;
-
+  background-color: $light_background_color;
 }
 
 .menu{
   display: flex;
+  flex-shrink: 1;
   column-gap: 0.5rem;
   width: 1.3rem;
   rotate: 90deg;
 }
 
+// Välj alla länkar (a) inne i nav-elementet
 nav a{
   color: black;
   font-style: normal;
   text-decoration: none;
 }
 
+/*------------------------------------*\
+  #PROJECTS
+\*------------------------------------*/
 
-/* BODY */
+.project_img{
+  width: 75%;
+  @media (min-width: $device_large){
+    width: auto;
+    position:relative;
+    left:60%;
+    transform:translateX(-50%);
+  }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
 }
 
-/* FOOTER */
+.project_button{
+  @extend .text-montserrat; // använd alla egenskaper från klassen .text-montserrat
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: $paragraph_color;
+  text-decoration: underline;
+}
 
-.footer_text {
-  color: black;
-  text-align: left;
-  font-family: Montserrat, Arial, sans-serif;
+
+/*------------------------------------*\
+  #CV
+\*------------------------------------*/
+
+.hello_cv
+{
+  @extend .text-croissant;
+
+  color: $light_background_color;
+  margin: 0;
+  padding: 0;
+
+  font-size: 40px;
+
+  @media (min-width: $device_medium){
+    font-size: 81px;
+  }
+
+  @media (min-width: $device_large){
+    font-size: 221px;
+  }
+}
+
+.body_cv{
+  @extend body;
+
+  background-color: $purple_background_color;
+  color: $light_background_color;
+}
+
+.body_cv p{
+  color: $light_background_color;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 166.667% */
+}
+
+.body_cv h3, h4, h5{
+  color: $light_background_color;
+  font-size: 36px;
+  line-height: normal;
   font-weight: normal;
-  font-size: 15px;
+}
+
+.body_cv h5{
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+.internship_header{
+  margin: 0;
+}
+
+.internship_info{
+  margin: 0;
+  padding-left: 1rem;
+}
+
+/*------------------------------------*\
+  #EDUCATION
+\*------------------------------------*/
+
+.body_education{
+  @extend body;
+
+  background-color: $green_background_color;
+}
+
+.body_education p, h2, h3, h4, h5{
+  text-align: right;
+  color: black;
+}
+
+.body_education h3{
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 138.889% */
+  margin: 0;
+}
+
+.body_education h5{
+  /* Ragna footer rubrik */
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+.body_education p{
+
+  /* Ragna body */
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 166.667% */
+}
+
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+
+.footer {
+  color: black;
+  background-color: $light_background_color;
+  text-align: left;
 }
