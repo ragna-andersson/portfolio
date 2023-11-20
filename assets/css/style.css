@@ -240,6 +240,8 @@ p {
 .header_bild_med_rubrik {
   position: relative;
   text-align: left;
+  width: 100%;
+  max-height: 700px;
   /* Ändra textjusteringen till vänster */
 }
 
@@ -254,6 +256,8 @@ p {
 /* Storlek på bild med text */
 .headerbild_index {
   width: 100%;
+  max-height: 700px;
+  object-fit: cover;
   /* Anpassa bilden till bredden av behållaren */
 }
 
@@ -303,23 +307,26 @@ p {
   #NAV MENU
 \*------------------------------------*/
 .menu_box {
-  align-items: start;
-  justify-content: end;
-  column-gap: 1rem;
+  height: 100%;
+  width: 24px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
   background-color: #f2f2f2;
 }
 
-.menu {
+#menu {
   display: flex;
-  justify-content: center;
-  flex-shrink: 1;
-  column-gap: 0.5rem;
-  width: 2rem;
-  transform: rotate(-90deg) translateX(-200%);
-  transform-origin: right bottom;
+  gap: 10px;
+  margin-top: 3.75rem;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg) translateX(-25%);
 }
 
-.menu a {
+#menu a {
   font-family: Montserrat;
   color: var(--mrk-brun, #261109);
   text-align: center;
@@ -328,6 +335,15 @@ p {
   text-transform: uppercase;
   line-height: normal;
   letter-spacing: -0.01406rem;
+}
+
+#menu a:hover {
+  background-color: rgb(221, 221, 221);
+}
+
+.currentPage {
+  text-decoration: underline;
+  color: red;
 }
 
 nav a {
