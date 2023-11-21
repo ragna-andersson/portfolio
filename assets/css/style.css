@@ -124,6 +124,18 @@ h1 {
   font-size: 81px;
   } */
 }
+@media (max-width: 850px) {
+  h1 {
+    font-size: 40px;
+    word-break: normal;
+  }
+}
+@media (max-width: 450px) {
+  h1 {
+    font-size: 30px;
+    word-break: normal;
+  }
+}
 
 /* Ragna H2 */
 h2 {
@@ -133,6 +145,12 @@ h2 {
   font-weight: 400;
   line-height: normal;
 }
+@media (max-width: 850px) {
+  h2 {
+    font-size: 1.5rem;
+    word-break: normal;
+  }
+}
 
 /* Ragna Rubrik Body */
 h3 {
@@ -141,9 +159,12 @@ h3 {
   font-style: normal;
   font-weight: 400;
   line-height: 3.125rem; /* 138.889% */
-  /*   @media (min-width: $device_medium) {
-    font-size: 24px;
-  } */
+}
+@media (max-width: 850px) {
+  h3 {
+    font-size: 1.5rem;
+    word-break: normal;
+  }
 }
 
 /*------------------------------------*\
@@ -161,14 +182,20 @@ p {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  /*   @media (min-width: $device_medium) {
-    font-size: 1.125rem;
+}
+@media (max-width: 850px) {
+  p {
+    font-size: 0.8rem;
     word-break: normal;
-  } */
+  }
+}
+
+.cv-duration-text {
+  color: white;
 }
 
 /* Ragna footer rubrik */
-.footer-text-bold {
+.footer-text-bold, .cv-duration-text {
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;
@@ -378,6 +405,24 @@ nav a {
 /*------------------------------------*\
   #CV
 \*------------------------------------*/
+.img-scale {
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  box-shadow: 0px 0px 0 0px #f9f9fb, 0px 0 28px 0 rgba(34, 33, 81, 0.01), 28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+  transition: border-radius 0.5s, transform 0.5s;
+}
+
+.img-scale:hover {
+  border-radius: 50%; /* Turns the square into a circle on hover */
+  transform: rotate(360deg); /* Rotates the element 360 degrees on hover */
+}
+
+.img-scale:hover {
+  border-radius: 50%; /* Turns the square into a circle on hover */
+  transform: rotate(360deg); /* Rotates the element 360 degrees on hover */
+}
+
 .hello_cv {
   color: #f2f2f2;
   margin: 0;
@@ -442,31 +487,9 @@ h5 {
   background-color: #848c73;
 }
 
-.body_education p,
-h2,
-h3,
-h4,
-h5 {
-  text-align: right;
-  color: black;
-}
-
 .body_education h3 {
-  font-family: Montserrat;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 50px; /* 138.889% */
+  line-height: 50px;
   margin: 0;
-}
-
-.body_education h5 {
-  /* Ragna footer rubrik */
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px; /* 150% */
 }
 
 .body_education p {
