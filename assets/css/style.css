@@ -71,12 +71,29 @@
   flex-direction: column;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-align-end {
+  justify-content: end;
+  align-content: flex-end;
+}
+
+.flex-center {
+  justify-content: center;
+  align-content: center;
+}
+
+.flex-align-self-center {
+  align-self: center;
+}
+
 .padding-1 {
   padding: 1rem;
 }
 
 .center {
-  display: block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -88,6 +105,7 @@ body, .body_education, .body_cv {
   background-color: #f2f2f2;
   padding: 0;
   margin: 0;
+  margin-right: 24px;
 }
 
 section {
@@ -462,9 +480,7 @@ nav a {
   # PROJECTS - PINT
 \*------------------------------------*/
 .img_prj {
-  width: 100%;
-  padding: 1rem;
-  object-fit: cover;
+  width: 70%;
 }
 
 .body_cv p, li {
