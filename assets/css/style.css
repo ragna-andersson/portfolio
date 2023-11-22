@@ -71,17 +71,41 @@
   flex-direction: column;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-align-end {
+  justify-content: end;
+  align-content: flex-end;
+}
+
+.flex-center {
+  justify-content: center;
+  align-content: center;
+}
+
+.flex-align-self-center {
+  align-self: center;
+}
+
 .padding-1 {
   padding: 1rem;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*------------------------------------*\
   #BODY
 \*------------------------------------*/
-body, .body_education, .body_cv {
+body, .body_education, .body_plint, .body_cv {
   background-color: #f2f2f2;
   padding: 0;
   margin: 0;
+  margin-right: 24px;
 }
 
 section {
@@ -94,14 +118,12 @@ section {
 /*------------------------------------*\
   #TEXT BASE
 \*------------------------------------*/
-.text-montserrat, .project_button, p, h3 {
-  text-align: left;
+.text-montserrat, .project_button, p, li, h4, h3 {
   font-family: Montserrat, Arial, sans-serif;
   font-weight: normal;
 }
 
 .text-croissant, .hello_cv, h2, h1 {
-  text-align: left;
   font-family: croissant one, serif;
   font-weight: normal;
 }
@@ -158,6 +180,7 @@ h3 {
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 400;
+  margin-bottom: 0;
   line-height: 3.125rem; /* 138.889% */
 }
 @media (max-width: 850px) {
@@ -167,11 +190,19 @@ h3 {
   }
 }
 
+/* Ragna Rubrik Footer */
+h4 {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
+}
+
 /*------------------------------------*\
   #OTHER TEXT
 \*------------------------------------*/
 /* Ragna body */
-p {
+p, li {
   color: black;
   font-size: 1.125rem;
   font-style: normal;
@@ -184,14 +215,14 @@ p {
   hyphens: auto;
 }
 @media (max-width: 850px) {
-  p {
+  p, li {
     font-size: 0.8rem;
     word-break: normal;
   }
 }
 
 .cv-duration-text {
-  color: white;
+  color: #f2f2f2;
 }
 
 /* Ragna footer rubrik */
@@ -221,11 +252,11 @@ p {
   line-height: 4.5rem; /* 150% */
 }
 
-.right-align {
+.text-right-align {
   text-align: right;
 }
 
-.left-align {
+.text-left-align {
   text-align: left;
 }
 
@@ -267,6 +298,8 @@ p {
 .header_bild_med_rubrik {
   position: relative;
   text-align: left;
+  width: 100%;
+  max-height: 700px;
   /* Ändra textjusteringen till vänster */
 }
 
@@ -281,6 +314,8 @@ p {
 /* Storlek på bild med text */
 .headerbild_index {
   width: 100%;
+  max-height: 700px;
+  object-fit: cover;
   /* Anpassa bilden till bredden av behållaren */
 }
 
@@ -326,27 +361,45 @@ p {
   /* Lägg till lite utrymme runt texten */
 }
 
+.header_text_right {
+  position: absolute;
+  text-align: center;
+  /* Placera rubriken på bilden */
+  top: 25%;
+  /* Justera vertikalt till mitten */
+  left: 50%;
+  /* Centrera vertikalt */
+  /* Bakgrundsfärg med genomskinlighet */
+  color: #fff;
+  /* Textfärg */
+  padding: 10px;
+  /* Lägg till lite utrymme runt texten */
+}
+
 /*------------------------------------*\
   #NAV MENU
 \*------------------------------------*/
 .menu_box {
-  align-items: start;
-  justify-content: end;
-  column-gap: 1rem;
+  height: 100%;
+  width: 24px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
   background-color: #f2f2f2;
 }
 
-.menu {
+#menu {
   display: flex;
-  justify-content: center;
-  flex-shrink: 1;
-  column-gap: 0.5rem;
-  width: 2rem;
-  transform: rotate(-90deg) translateX(-200%);
-  transform-origin: right bottom;
+  gap: 10px;
+  margin-top: 3.75rem;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg) translateX(-25%);
 }
 
-.menu a {
+#menu a {
   font-family: Montserrat;
   color: var(--mrk-brun, #261109);
   text-align: center;
@@ -355,6 +408,15 @@ p {
   text-transform: uppercase;
   line-height: normal;
   letter-spacing: -0.01406rem;
+}
+
+#menu a:hover {
+  background-color: rgb(221, 221, 221);
+}
+
+.currentPage {
+  text-decoration: underline;
+  color: red;
 }
 
 nav a {
@@ -438,13 +500,15 @@ nav a {
   line-height: 30px; /* 166.667% */
 }
 
-.body_cv h3,
-h4,
-h5 {
+.body_cv {
   color: #f2f2f2;
   font-size: 36px;
   line-height: normal;
   font-weight: normal;
+}
+
+.body_cv h3 {
+  color: #f2f2f2;
 }
 
 .body_cv h5 {
@@ -465,24 +529,39 @@ h5 {
 }
 
 /*------------------------------------*\
-  #EDUCATION
+  # PROJECTS - PINT
 \*------------------------------------*/
-.body_education {
-  background-color: #848c73;
+.img_prj {
+  width: 70%;
 }
 
-.body_education h3 {
-  line-height: 50px;
-  margin: 0;
+.body_plint {
+  background-color: #BFA83F;
+  color: black;
 }
 
-.body_education p {
-  /* Ragna body */
+.body_plint h5 {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+.body_plint p, li {
+  color: black;
   font-family: Montserrat;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px; /* 166.667% */
+}
+
+/*------------------------------------*\
+  #EDUCATION
+\*------------------------------------*/
+.body_education {
+  background-color: #848c73;
 }
 
 /*------------------------------------*\
@@ -492,6 +571,176 @@ h5 {
   color: black;
   background-color: #f2f2f2;
   text-align: left;
+}
+
+/*------------------------------------*\
+  #VIDEO MODAL
+\*------------------------------------*/
+#lvideo-wrap {
+  position: fixed;
+  padding: 12px;
+  height: 100vh;
+  display: flex;
+  z-index: 9991;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+#lvideo-wrap, #lvideo-wrap:after,
+#lvideo-wrap .lvideo-overlay {
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+#lvideo-wrap:after,
+#lvideo-wrap .lvideo-overlay {
+  height: 100%;
+  position: absolute;
+}
+#lvideo-wrap:after {
+  content: "";
+  display: block;
+  background-color: var(--primary-color);
+  opacity: 0;
+  z-index: -1;
+}
+#lvideo-wrap .lvideo-container,
+#lvideo-wrap video,
+#lvideo-wrap iframe {
+  border-radius: 12px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #000;
+}
+#lvideo-wrap .lvideo-container {
+  width: 95%;
+  z-index: 5;
+}
+#lvideo-wrap video,
+#lvideo-wrap iframe {
+  z-index: 10;
+  box-shadow: 0 0 19px rgba(0, 0, 0, 0.16);
+  width: 100%;
+  height: 100vh;
+  max-height: 85vh;
+  display: block;
+}
+#lvideo-wrap video {
+  object-fit: cover;
+}
+#lvideo-wrap .lvideo-close {
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+  border: solid 2px var(--primary-color);
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 150;
+}
+#lvideo-wrap .lvideo-close:before, #lvideo-wrap .lvideo-close:after {
+  content: "";
+  width: 60%;
+  height: 3px;
+  background-color: var(--primary-color);
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+#lvideo-wrap .lvideo-close:before {
+  transform: rotate(42deg);
+}
+#lvideo-wrap .lvideo-close:after {
+  transform: rotate(-42deg);
+}
+#lvideo-wrap .lvideo-close:focus {
+  outline: none;
+}
+#lvideo-wrap .lvideo-close:hover {
+  background-color: var(--primary-color);
+}
+#lvideo-wrap .lvideo-close:hover:before, #lvideo-wrap .lvideo-close:hover:after {
+  background-color: #fff;
+}
+#lvideo-wrap.active {
+  opacity: 1;
+  visibility: visible;
+}
+#lvideo-wrap.active:after {
+  opacity: 0.5;
+}
+@media (max-width: 1659px) and (min-width: 1330px) {
+  #lvideo-wrap .lvideo-container {
+    max-width: 978px;
+  }
+}
+@media (min-width: 1660px) {
+  #lvideo-wrap .lvideo-container {
+    max-width: 80%;
+  }
+}
+
+.btn-animated {
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  line-height: 100px;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  border: 0;
+}
+.btn-animated:before, .btn-animated:after {
+  content: "";
+  border: 1px solid;
+  border-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  animation: 1s it-zoom linear infinite;
+}
+.btn-animated:before {
+  animation-delay: 0.5s;
+}
+.btn-animated:hover {
+  transform: scale(1.1);
+}
+.btn-animated i {
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent transparent transparent #333;
+  margin: auto;
+}
+
+@keyframes it-zoom {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

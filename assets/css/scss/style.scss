@@ -33,6 +33,9 @@
 $light_background_color: #f2f2f2;
 $purple_background_color: #968fa6;
 $green_background_color: #848c73;
+$plint_background_color: #BFA83F;
+
+$light_text_color: $light_background_color;
 $header_color: black;
 $paragraph_color: black;
 
@@ -43,10 +46,13 @@ $device_large: 850px;
   #GENERIC
 \*------------------------------------*/
 
+
+
 .grid-container-2-col {
   display: grid;
   grid-template-columns: 50% 50%;
   row-gap: 3rem;
+  //background-color: red;
 }
 
 .col1 {
@@ -82,8 +88,34 @@ $device_large: 850px;
   flex-direction: column;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-align-end {
+  justify-content: end;
+  align-content: flex-end;
+}
+
+.flex-center {
+  justify-content: center;
+  align-content: center;
+}
+
+.flex-align-self-center {
+  align-self: center;
+}
+
 .padding-1 {
   padding: 1rem;
+}
+
+.center
+{
+  // center image
+  //display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*------------------------------------*\
@@ -94,6 +126,7 @@ body {
   background-color: $light_background_color;
   padding: 0;
   margin: 0;
+  margin-right: 24px;
 }
 
 section {
@@ -109,13 +142,11 @@ section {
 
 // Basklass som används för all text med typsnittet Montserrat
 .text-montserrat {
-  text-align: left;
   font-family: Montserrat, Arial, sans-serif;
   font-weight: normal;
 }
 
 .text-croissant {
-  text-align: left;
   font-family: croissant one, serif;
   font-weight: normal;
 }
@@ -168,7 +199,6 @@ h2 {
       font-size: 1.5rem;
       word-break: normal;
     }
-
 }
 
 /* Ragna Rubrik Body */
@@ -178,6 +208,7 @@ h3 {
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 400;
+  margin-bottom: 0;
   line-height: 3.125rem; /* 138.889% */
 
   // Mellanstorlek - upp till stora devices
@@ -185,7 +216,15 @@ h3 {
     font-size: 1.5rem;
     word-break: normal;
   }
+}
 
+/* Ragna Rubrik Footer */
+h4 {
+  @extend .text-montserrat; // använd alla egenskaper från klassen .text-montserrat
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
 }
 
 /*------------------------------------*\
@@ -193,7 +232,7 @@ h3 {
 \*------------------------------------*/
 
 /* Ragna body */
-p {
+p, li{
   @extend .text-montserrat; // använd alla egenskaper från klassen .text-montserrat
 
   color: $paragraph_color;
@@ -217,7 +256,7 @@ p {
 
 .cv-duration-text{
   @extend .footer-text-bold;
-  color:white;
+  color:$light_text_color;
 }
 
 
@@ -248,11 +287,11 @@ p {
   line-height: 4.5rem; /* 150% */
 }
 
-.right-align {
+.text-right-align {
   text-align: right;
 }
 
-.left-align {
+.text-left-align {
   text-align: left;
 }
 
@@ -295,6 +334,8 @@ p {
 .header_bild_med_rubrik {
   position: relative;
   text-align: left;
+  width: 100%;
+  max-height: 700px;
   /* Ändra textjusteringen till vänster */
 }
 
@@ -309,6 +350,8 @@ p {
 /* Storlek på bild med text */
 .headerbild_index {
   width: 100%;
+  max-height: 700px;
+  object-fit: cover;
   /* Anpassa bilden till bredden av behållaren */
 }
 
@@ -354,40 +397,65 @@ p {
   /* Lägg till lite utrymme runt texten */
 }
 
+.header_text_right {
+  position: absolute;
+  text-align: center;
+  /* Placera rubriken på bilden */
+  top: 25%;
+  /* Justera vertikalt till mitten */
+  left: 50%;
+  /* Centrera vertikalt */
+  //transform: translateX(-50%);
+  /* Bakgrundsfärg med genomskinlighet */
+  color: #fff;
+  /* Textfärg */
+  padding: 10px;
+  /* Lägg till lite utrymme runt texten */
+}
+
 /*------------------------------------*\
   #NAV MENU
 \*------------------------------------*/
 
 .menu_box {
-  align-items: start;
-  justify-content: end;
-  column-gap: 1rem;
+  height: 100%;
+  width: 24px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
   background-color: $light_background_color;
 }
 
-.menu {
+#menu {
   display: flex;
-  justify-content: center;
-  flex-shrink: 1;
-  column-gap: 0.5rem;
-  width: 2rem;
-  //rotate: -90deg;
-  transform: rotate(-90deg) translateX(-200%); // Rotera och flytta ned texten med 200% av dess egen höjd
-  transform-origin: right bottom;
-  //padding-left: 1rem;
-  //padding-top: 1rem;
+  gap: 10px;
+  margin-top: 3.75rem;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg)translateX(-25%);
 }
 
-.menu a {
+#menu a {
   font-family: Montserrat;
   color: var(--mrk-brun, #261109);
   text-align: center;
   font-size: 0.9375rem;
   font-style: normal;
   text-transform: uppercase;
-  //font-weight: 0;
   line-height: normal;
   letter-spacing: -0.01406rem;
+}
+
+#menu a:hover {
+  background-color: rgb(221, 221, 221);
+}
+
+.currentPage {
+  // underline text
+  text-decoration: underline;
+  color: red;
 }
 
 // Välj alla länkar (a) inne i nav-elementet
@@ -470,8 +538,9 @@ nav a {
   color: $light_background_color;
 }
 
+// Väljer alla p som ligger in i element med class="body_cv"
 .body_cv p {
-  color: $light_background_color;
+  color: $light_text_color;
   font-family: Montserrat;
   font-size: 18px;
   font-style: normal;
@@ -479,13 +548,15 @@ nav a {
   line-height: 30px; /* 166.667% */
 }
 
-.body_cv h3,
-h4,
-h5 {
+.body_cv {
   color: $light_background_color;
   font-size: 36px;
   line-height: normal;
   font-weight: normal;
+}
+
+.body_cv h3 {
+  color: $light_background_color;
 }
 
 .body_cv h5 {
@@ -506,6 +577,41 @@ h5 {
 }
 
 /*------------------------------------*\
+  # PROJECTS - PINT
+\*------------------------------------*/
+
+.img_prj{
+  width: 70%;
+}
+
+.body_plint
+{
+  @extend body;
+
+  background-color: $plint_background_color;
+  color: black;
+}
+
+.body_plint h5 {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+  // Väljer alla p som ligger in i element med class="body_cv"
+.body_plint p, li {
+  color: black;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 166.667% */
+}
+
+
+/*------------------------------------*\
   #EDUCATION
 \*------------------------------------*/
 
@@ -516,21 +622,6 @@ h5 {
 }
 
 
-.body_education h3 {
-  line-height: 50px; 
-  margin: 0;
-}
-
-
-.body_education p {
-  /* Ragna body */
-  font-family: Montserrat;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px; /* 166.667% */
-}
-
 /*------------------------------------*\
   #FOOTER
 \*------------------------------------*/
@@ -540,3 +631,197 @@ h5 {
   background-color: $light_background_color;
   text-align: left;
 }
+
+/*------------------------------------*\
+  #VIDEO MODAL
+\*------------------------------------*/
+
+#lvideo-wrap {
+  position: fixed;
+
+  padding: 12px;
+  height: 100vh;
+  display: flex;
+
+  z-index: 9991;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &,
+  &:after,
+  .lvideo-overlay {
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  &:after,
+  .lvideo-overlay {
+    height: 100%;
+    position: absolute;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    background-color: var(--primary-color);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .lvideo-container,
+  video,
+  iframe {
+    border-radius: 12px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #000;
+  }
+
+  .lvideo-container {
+    width: 95%;
+    z-index: 5;
+  }
+
+  video,
+  iframe {
+    z-index: 10;
+    box-shadow: 0 0 19px rgba(0, 0, 0, 0.16);
+    width: 100%;
+    height: 100vh;
+    max-height: 85vh;
+   
+    display: block;
+  }
+  
+  video {
+     object-fit: cover;
+  }
+
+  .lvideo-close {
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    border: solid 2px var(--primary-color);
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 150;
+    &:before,
+    &:after {
+      content: "";
+      width: 60%;
+      height: 3px;
+      background-color: var(--primary-color);
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+    }
+    &:before {
+      transform: rotate(42deg);
+    }
+    &:after {
+      transform: rotate(-42deg);
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: var(--primary-color);
+      &:before,
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+
+    &:after {
+     opacity: 0.5;
+    }
+  }
+
+  @media (max-width: 1659px) and (min-width: 1330px) {
+    .lvideo-container {
+      max-width: 978px;
+    }
+  }
+  @media (min-width: 1660px) {
+    .lvideo-container {
+      max-width: 80%;
+    }
+  }
+}
+
+.btn-animated {
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  line-height: 100px;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  border: 0;
+  &:before,
+  &:after {
+    content: "";
+    border: 1px solid;
+    border-color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    animation: 1s it-zoom linear infinite;
+  }
+
+  &:before {
+    animation-delay: 0.5s;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  i {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent #333;
+    margin: auto;
+  }
+}
+
+@keyframes it-zoom {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+

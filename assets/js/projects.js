@@ -22,10 +22,10 @@ const projects = [
         },
 
         {
-            rubrik: "Reseplaneraren - Lättanvänd?",
-            body: "Kan UX-research användas för att förbättra användarupplevelsen av Västtrafiks Reseplanerare? Vilken viktig information framkommer från undersökningen för att optimera tjänsten?",
+            rubrik: "Praktik - Hur jobbar en lingvist?",
+            body: "Åtta veckors praktik på en av Europas största företag för dubbing, undertexter och textmaterial för rörlig media: Plint AB",
             img: "/assets/img/projekt/prj1_hearts.png",
-            url: ""
+            url: "plint.html"
         },
 
     ];
