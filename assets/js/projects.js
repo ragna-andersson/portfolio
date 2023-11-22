@@ -20,11 +20,10 @@ const projects = [
             img: "/assets/img/projekt/prj1_hearts.png",
             url: ""
         },
-
         {
             rubrik: "Praktik - Hur jobbar en lingvist?",
             body: "Åtta veckors praktik på en av Europas största företag för dubbing, undertexter och textmaterial för rörlig media: Plint AB",
-            img: "/assets/img/projekt/prj1_hearts.png",
+            img: "/assets/img/projekt/plintScreenshot.png",
             url: "plint.html"
         },
 
