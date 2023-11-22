@@ -89,6 +89,10 @@
   align-self: center;
 }
 
+.flex-align-self-end {
+  align-self: flex-end;
+}
+
 .padding-1 {
   padding: 1rem;
 }
@@ -532,7 +536,9 @@ nav a {
   # PROJECTS - PINT
 \*------------------------------------*/
 .img_prj {
-  width: 70%;
+  border-radius: 6.997px;
+  background: url(<path-to-image>), lightgray 50%/cover no-repeat;
+  box-shadow: 0px 3.99805px 3.99805px 0px rgba(0, 0, 0, 0.25);
 }
 
 .body_plint {
