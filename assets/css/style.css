@@ -75,6 +75,12 @@
   padding: 1rem;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*------------------------------------*\
   #BODY
 \*------------------------------------*/
@@ -94,14 +100,12 @@ section {
 /*------------------------------------*\
   #TEXT BASE
 \*------------------------------------*/
-.text-montserrat, .project_button, p, h3 {
-  text-align: left;
+.text-montserrat, .project_button, p, li, h4, h3 {
   font-family: Montserrat, Arial, sans-serif;
   font-weight: normal;
 }
 
 .text-croissant, .hello_cv, h2, h1 {
-  text-align: left;
   font-family: croissant one, serif;
   font-weight: normal;
 }
@@ -158,6 +162,7 @@ h3 {
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 400;
+  margin-bottom: 0;
   line-height: 3.125rem; /* 138.889% */
 }
 @media (max-width: 850px) {
@@ -167,11 +172,19 @@ h3 {
   }
 }
 
+/* Ragna Rubrik Footer */
+h4 {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
+}
+
 /*------------------------------------*\
   #OTHER TEXT
 \*------------------------------------*/
 /* Ragna body */
-p {
+p, li {
   color: black;
   font-size: 1.125rem;
   font-style: normal;
@@ -184,14 +197,14 @@ p {
   hyphens: auto;
 }
 @media (max-width: 850px) {
-  p {
+  p, li {
     font-size: 0.8rem;
     word-break: normal;
   }
 }
 
 .cv-duration-text {
-  color: white;
+  color: #f2f2f2;
 }
 
 /* Ragna footer rubrik */
@@ -221,11 +234,11 @@ p {
   line-height: 4.5rem; /* 150% */
 }
 
-.right-align {
+.text-right-align {
   text-align: right;
 }
 
-.left-align {
+.text-left-align {
   text-align: left;
 }
 
@@ -445,7 +458,16 @@ nav a {
   color: #f2f2f2;
 }
 
-.body_cv p {
+/*------------------------------------*\
+  # PROJECTS - PINT
+\*------------------------------------*/
+.img_prj {
+  width: 100%;
+  padding: 1rem;
+  object-fit: cover;
+}
+
+.body_cv p, li {
   color: #f2f2f2;
   font-family: Montserrat;
   font-size: 18px;
@@ -454,13 +476,15 @@ nav a {
   line-height: 30px; /* 166.667% */
 }
 
-.body_cv h3,
-h4,
-h5 {
+.body_cv {
   color: #f2f2f2;
   font-size: 36px;
   line-height: normal;
   font-weight: normal;
+}
+
+.body_cv h3 {
+  color: #f2f2f2;
 }
 
 .body_cv h5 {
@@ -485,20 +509,6 @@ h5 {
 \*------------------------------------*/
 .body_education {
   background-color: #848c73;
-}
-
-.body_education h3 {
-  line-height: 50px;
-  margin: 0;
-}
-
-.body_education p {
-  /* Ragna body */
-  font-family: Montserrat;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px; /* 166.667% */
 }
 
 /*------------------------------------*\

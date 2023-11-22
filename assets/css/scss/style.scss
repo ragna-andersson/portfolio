@@ -33,6 +33,7 @@
 $light_background_color: #f2f2f2;
 $purple_background_color: #968fa6;
 $green_background_color: #848c73;
+$light_text_color: $light_background_color;
 $header_color: black;
 $paragraph_color: black;
 
@@ -42,6 +43,8 @@ $device_large: 850px;
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
+
+
 
 .grid-container-2-col {
   display: grid;
@@ -86,6 +89,14 @@ $device_large: 850px;
   padding: 1rem;
 }
 
+.center
+{
+  // center image
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*------------------------------------*\
   #BODY
 \*------------------------------------*/
@@ -109,13 +120,11 @@ section {
 
 // Basklass som används för all text med typsnittet Montserrat
 .text-montserrat {
-  text-align: left;
   font-family: Montserrat, Arial, sans-serif;
   font-weight: normal;
 }
 
 .text-croissant {
-  text-align: left;
   font-family: croissant one, serif;
   font-weight: normal;
 }
@@ -168,7 +177,6 @@ h2 {
       font-size: 1.5rem;
       word-break: normal;
     }
-
 }
 
 /* Ragna Rubrik Body */
@@ -178,6 +186,7 @@ h3 {
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 400;
+  margin-bottom: 0;
   line-height: 3.125rem; /* 138.889% */
 
   // Mellanstorlek - upp till stora devices
@@ -185,7 +194,15 @@ h3 {
     font-size: 1.5rem;
     word-break: normal;
   }
+}
 
+/* Ragna Rubrik Footer */
+h4 {
+  @extend .text-montserrat; // använd alla egenskaper från klassen .text-montserrat
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
 }
 
 /*------------------------------------*\
@@ -193,7 +210,7 @@ h3 {
 \*------------------------------------*/
 
 /* Ragna body */
-p {
+p, li{
   @extend .text-montserrat; // använd alla egenskaper från klassen .text-montserrat
 
   color: $paragraph_color;
@@ -217,7 +234,7 @@ p {
 
 .cv-duration-text{
   @extend .footer-text-bold;
-  color:white;
+  color:$light_text_color;
 }
 
 
@@ -248,11 +265,11 @@ p {
   line-height: 4.5rem; /* 150% */
 }
 
-.right-align {
+.text-right-align {
   text-align: right;
 }
 
-.left-align {
+.text-left-align {
   text-align: left;
 }
 
@@ -483,8 +500,21 @@ nav a {
   color: $light_background_color;
 }
 
-.body_cv p {
-  color: $light_background_color;
+/*------------------------------------*\
+  # PROJECTS - PINT
+\*------------------------------------*/
+
+.img_prj{
+  width: 100%;
+  padding: 1rem;
+  object-fit: cover;
+
+}
+
+
+// Väljer alla p som ligger in i element med class="body_cv"
+.body_cv p,li {
+  color: $light_text_color;
   font-family: Montserrat;
   font-size: 18px;
   font-style: normal;
@@ -492,13 +522,15 @@ nav a {
   line-height: 30px; /* 166.667% */
 }
 
-.body_cv h3,
-h4,
-h5 {
+.body_cv {
   color: $light_background_color;
   font-size: 36px;
   line-height: normal;
   font-weight: normal;
+}
+
+.body_cv h3 {
+  color: $light_background_color;
 }
 
 .body_cv h5 {
@@ -528,21 +560,6 @@ h5 {
   background-color: $green_background_color;
 }
 
-
-.body_education h3 {
-  line-height: 50px; 
-  margin: 0;
-}
-
-
-.body_education p {
-  /* Ragna body */
-  font-family: Montserrat;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px; /* 166.667% */
-}
 
 /*------------------------------------*\
   #FOOTER
