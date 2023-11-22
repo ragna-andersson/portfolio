@@ -101,7 +101,7 @@
 /*------------------------------------*\
   #BODY
 \*------------------------------------*/
-body, .body_education, .body_cv {
+body, .body_education, .body_plint, .body_cv {
   background-color: #f2f2f2;
   padding: 0;
   margin: 0;
@@ -361,6 +361,21 @@ p, li {
   /* Lägg till lite utrymme runt texten */
 }
 
+.header_text_right {
+  position: absolute;
+  text-align: center;
+  /* Placera rubriken på bilden */
+  top: 25%;
+  /* Justera vertikalt till mitten */
+  left: 50%;
+  /* Centrera vertikalt */
+  /* Bakgrundsfärg med genomskinlighet */
+  color: #fff;
+  /* Textfärg */
+  padding: 10px;
+  /* Lägg till lite utrymme runt texten */
+}
+
 /*------------------------------------*\
   #NAV MENU
 \*------------------------------------*/
@@ -476,14 +491,7 @@ nav a {
   color: #f2f2f2;
 }
 
-/*------------------------------------*\
-  # PROJECTS - PINT
-\*------------------------------------*/
-.img_prj {
-  width: 70%;
-}
-
-.body_cv p, li {
+.body_cv p {
   color: #f2f2f2;
   font-family: Montserrat;
   font-size: 18px;
@@ -518,6 +526,35 @@ nav a {
 .internship_info {
   margin: 0;
   padding-left: 1rem;
+}
+
+/*------------------------------------*\
+  # PROJECTS - PINT
+\*------------------------------------*/
+.img_prj {
+  width: 70%;
+}
+
+.body_plint {
+  background-color: #BFA83F;
+  color: black;
+}
+
+.body_plint h5 {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+.body_plint p, li {
+  color: black;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 166.667% */
 }
 
 /*------------------------------------*\
